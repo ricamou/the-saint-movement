@@ -1,12 +1,23 @@
-# The SAINT Movement v2.0
+# The SAINT Movement v3.0
 
-Premium static website ready for GitHub + Vercel.
+Premium Web3 static website ready for GitHub + Vercel.
 
-New: animated hero, live DexScreener dashboard, Phantom swap deeplink, Pump.fun buy button, light/dark mode, SEO metadata, and refined mobile.
+## v3.0 Highlights
 
-DexScreener API: https://api.dexscreener.com/tokens/v1/solana/GUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump
-Phantom swap: https://phantom.app/ul/v1/swap/?buy=solana%3A101%2Faddress%3AGUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump&sell=
+- Cinematic Apple/Stripe-style hero
+- Live Transparency Center
+- Live DexScreener market metrics
+- SAINT Health Score
+- Lightweight activity chart
+- Pump.fun buy button
+- Phantom deep link
+- Community map
+- Holder Journey
+- Community Wall page
+- Light/Dark mode
+- Mobile refinements
+- SEO files included
 
-Holder count links to Solscan because real-time holders generally require a dedicated indexer/API.
+## Official CA
 
-Pump.fun: https://pump.fun/coin/GUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump
+CA: GUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump
