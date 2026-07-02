@@ -1,14 +1,20 @@
-# The SAINT Movement
+# The SAINT Movement v1.0 Launch
 
-Official website of the $SAINT Movement — A Crypto Community With a Soul.
+Static website ready for GitHub and Vercel.
 
-## Files
+## Pages
 
-- `index.html`
-- `styles.css`
-- `script.js`
-- `assets/saint-logo.jpg`
+- Home: `index.html`
+- Founder's Vision: `founders-vision.html`
+- Transparency: `transparency.html`
+- Creator Fund: `creator-fund.html`
+
+## Structure
+
+- `assets/logo/saint-logo.jpg`
+- `css/styles.css`
+- `js/app.js`
 
 ## Deploy
 
-This is a static website and can be deployed directly on Vercel.
+Upload all files and folders to the GitHub repository root. Vercel will automatically deploy the site.
