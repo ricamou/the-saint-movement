@@ -1,176 +1,309 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>$SAINT — The SAINT Movement</title>
-  <meta name="description" content="$SAINT is a Solana-powered movement built around community, transparency, and decentralized humanitarian impact." />
+
+  <title>$SAINT — Building Trust Through Community</title>
+  <meta name="description" content="$SAINT is a Solana-powered community movement built around trust, transparency, and purpose." />
+
+  <meta property="og:title" content="$SAINT — A Crypto Community With a Soul" />
+  <meta property="og:description" content="Building Trust Through Community. A Solana-powered movement for transparency, purpose, and real-world impact." />
+  <meta property="og:image" content="assets/saint-logo.jpg" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="assets/saint-logo.jpg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <div class="noise"></div>
-  <div class="cursor-glow"></div>
 
-  <header class="nav">
-    <a class="brand" href="#home">
-      <img src="assets/saint-logo.jpg" alt="$SAINT logo">
-      <span>$SAINT</span>
+<body>
+  <div class="background">
+    <div class="gradient gradient-one"></div>
+    <div class="gradient gradient-two"></div>
+    <div class="grid"></div>
+    <div class="noise"></div>
+  </div>
+
+  <header class="nav" id="nav">
+    <a class="brand" href="#home" aria-label="$SAINT home">
+      <img src="assets/saint-logo.jpg" alt="$SAINT logo" />
+      <span>SAINT</span>
     </a>
-    <nav>
+
+    <nav class="desktop-menu" aria-label="Main navigation">
+      <a href="#why">Why</a>
       <a href="#vision">Vision</a>
-      <a href="#manifesto">Manifesto</a>
       <a href="#transparency">Transparency</a>
       <a href="#roadmap">Roadmap</a>
-      <a href="#links">Links</a>
+      <a href="#faq">FAQ</a>
     </nav>
-    <a class="nav-cta" href="https://x.com/SaintDevSol" target="_blank" rel="noopener">Follow on X</a>
+
+    <div class="nav-actions">
+      <a class="nav-button" href="https://t.co/1RIIzHQs0j" target="_blank" rel="noopener">Join</a>
+      <button class="menu-button" id="menuButton" aria-label="Open menu">☰</button>
+    </div>
   </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#why">Why $SAINT</a>
+    <a href="#vision">Vision</a>
+    <a href="#transparency">Transparency</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#faq">FAQ</a>
+    <a href="#join">Join</a>
+  </div>
 
   <main id="home">
     <section class="hero section">
-      <div class="stars"></div>
-      <div class="hero-inner reveal">
-        <div class="pill">Built on Solana · Powered by Community · Designed for Humanity</div>
-        <div class="logo-shell">
+      <div class="hero-shell reveal">
+        <div class="badge">
+          <span></span>
+          Built on Solana · Powered by Community
+        </div>
+
+        <div class="hero-logo-wrap">
           <div class="halo"></div>
-          <img src="assets/saint-logo.jpg" alt="$SAINT logo">
+          <img class="hero-logo" src="assets/saint-logo.jpg" alt="$SAINT logo" />
         </div>
-        <h1>The Future of Decentralized Humanitarian Impact</h1>
+
+        <p class="kicker">The SAINT Movement</p>
+        <h1>Building Trust Through Community.</h1>
         <p class="hero-subtitle">A Crypto Community With a Soul.</p>
-        <p class="hero-text">
-          $SAINT is more than a token. It is a community-driven movement where transparency,
-          trust, and blockchain technology come together to create a new standard for impact.
+        <p class="hero-copy">
+          $SAINT is a Solana-powered movement built around transparency, purpose,
+          and the belief that crypto communities can create something bigger than a token.
         </p>
-        <div class="actions">
-          <a class="btn primary" href="#links">Buy $SAINT</a>
-          <a class="btn light" href="https://t.co/1RIIzHQs0j" target="_blank" rel="noopener">Join Telegram</a>
-          <a class="btn outline" href="https://x.com/SaintDevSol" target="_blank" rel="noopener">Follow on X</a>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="https://t.co/1RIIzHQs0j" target="_blank" rel="noopener">Become a Saint</a>
+          <a class="btn secondary" href="#buy">Buy $SAINT</a>
+          <a class="btn ghost" href="https://x.com/SaintDevSol" target="_blank" rel="noopener">Follow on X</a>
         </div>
-        <div class="ca-box">
-          <span>Official Contract</span>
-          <code>GUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump</code>
-          <button onclick="copyCA()">Copy</button>
+
+        <div class="contract-card" id="buy">
+          <div>
+            <span>Official Contract</span>
+            <code id="contractText">GUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump</code>
+          </div>
+          <button onclick="copyContract()">Copy</button>
         </div>
       </div>
     </section>
 
-    <section class="statement reveal">
-      <p>We don't believe blockchain should only create wealth.</p>
-      <h2>We believe it should create trust.</h2>
+    <section class="statement section reveal">
+      <p>What if trust became transparent?</p>
+      <h2>That is why $SAINT exists.</h2>
     </section>
 
-    <section id="vision" class="section grid-two">
-      <div class="reveal">
-        <span class="eyebrow">Our Vision</span>
-        <h2>A project with a soul.</h2>
-      </div>
-      <div class="glass reveal">
+    <section id="why" class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Why $SAINT</p>
+        <h2>More than market hype. Built around principles.</h2>
         <p>
-          When $SAINT was launched, it was never just about creating another token on Solana.
-          It was about building a pure, organic foundation — a project with a soul.
-        </p>
-        <p>
-          The long-term vision is to create a transparent, decentralized, community-led model
-          for humanitarian impact.
+          The strongest Web3 movements are not built by noise. They are built by people,
+          transparency, and shared conviction.
         </p>
       </div>
-    </section>
 
-    <section class="section reveal">
-      <span class="eyebrow">Why $SAINT Exists</span>
-      <h2>Crypto can do more.</h2>
-      <div class="cards">
-        <article>
-          <strong>01</strong>
+      <div class="cards three">
+        <article class="card reveal">
+          <div class="icon">01</div>
           <h3>Community First</h3>
-          <p>Every Saint matters. The foundation begins with loyal people who believe in the mission.</p>
+          <p>Every Saint matters. The foundation begins with people who believe in the mission.</p>
         </article>
-        <article>
-          <strong>02</strong>
-          <h3>Radical Transparency</h3>
-          <p>Important actions should be publicly visible, verifiable, and open to the community.</p>
+
+        <article class="card reveal">
+          <div class="icon">02</div>
+          <h3>Open Trust</h3>
+          <p>Important actions should be visible, verifiable, and easy for the community to follow.</p>
         </article>
-        <article>
-          <strong>03</strong>
-          <h3>Humanitarian Future</h3>
-          <p>Growth creates opportunity. Opportunity creates impact. Impact creates purpose.</p>
+
+        <article class="card reveal">
+          <div class="icon">03</div>
+          <h3>Purpose</h3>
+          <p>Technology becomes meaningful when it helps people build something that lasts.</p>
         </article>
       </div>
     </section>
 
-    <section id="manifesto" class="section manifesto reveal">
-      <span class="eyebrow">Founder's Vision</span>
-      <h2>“I am not just building a currency.”</h2>
-      <p>
-        “I am building the infrastructure for a new generation of global aid. It’s a movement that begins
-        by deeply taking care of our own family, and ends by proving to the world what a crypto community
-        with a soul can achieve.”
-      </p>
-    </section>
+    <section id="vision" class="section vision">
+      <div class="vision-panel reveal">
+        <div class="vision-copy">
+          <p class="eyebrow">Founder’s Vision</p>
+          <h2>A project with a soul.</h2>
+          <p>
+            When $SAINT was launched, it was never just about creating another token on Solana.
+            It was about building a pure, organic foundation — a project with a soul.
+          </p>
+          <p>
+            The long-term vision is to explore how blockchain communities can create transparent,
+            community-led humanitarian impact.
+          </p>
+        </div>
 
-    <section class="section compare reveal">
-      <div class="panel muted">
-        <h3>Traditional Charity</h3>
-        <ul>
-          <li>Bureaucracy</li>
-          <li>Hidden costs</li>
-          <li>Limited donor voice</li>
-          <li>Slow decisions</li>
-        </ul>
-      </div>
-      <div class="panel bright">
-        <h3>The $SAINT Model</h3>
-        <ul>
-          <li>On-chain transparency</li>
-          <li>Community democracy</li>
-          <li>Open donations</li>
-          <li>Decentralized decisions</li>
-        </ul>
+        <div class="quote-card">
+          <p>
+            “I am not just building a currency. I am building the infrastructure for a new generation
+            of global aid.”
+          </p>
+          <span>— $SAINT Founder’s Vision</span>
+        </div>
       </div>
     </section>
 
-    <section id="transparency" class="section dashboard reveal">
-      <span class="eyebrow">Transparency</span>
-      <h2>Every important step should be visible.</h2>
-      <div class="dash-grid">
-        <div><span>✓</span> Contract</div>
-        <div><span>✓</span> Treasury</div>
-        <div><span>✓</span> Community Wallet</div>
-        <div><span>Future</span> Creator Fund</div>
-        <div><span>Future</span> Governance</div>
-        <div><span>Future</span> Charity Wallet</div>
+    <section class="section model">
+      <div class="section-heading reveal">
+        <p class="eyebrow">The $SAINT Model</p>
+        <h2>From community to impact.</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <span>1</span>
+          <h3>Build Community</h3>
+          <p>Strength starts with loyal people, shared values, and consistent communication.</p>
+        </div>
+
+        <div class="step reveal">
+          <span>2</span>
+          <h3>Grow Together</h3>
+          <p>As the movement grows, the ecosystem gains more capacity to build real initiatives.</p>
+        </div>
+
+        <div class="step reveal">
+          <span>3</span>
+          <h3>Create Impact</h3>
+          <p>The long-term goal is transparent, community-driven support for causes that matter.</p>
+        </div>
       </div>
     </section>
 
-    <section id="roadmap" class="section reveal">
-      <span class="eyebrow">Roadmap</span>
-      <h2>The movement begins now.</h2>
+    <section id="transparency" class="section transparency">
+      <div class="dashboard reveal">
+        <div class="dashboard-top">
+          <div>
+            <p class="eyebrow">Open Trust</p>
+            <h2>Trust is earned. Not claimed.</h2>
+          </div>
+          <a class="small-link" href="https://x.com/SaintDevSol" target="_blank" rel="noopener">Official X</a>
+        </div>
+
+        <div class="trust-grid">
+          <div class="trust-item active">
+            <span>Verified</span>
+            <strong>Official Contract</strong>
+            <p>GUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump</p>
+          </div>
+
+          <div class="trust-item active">
+            <span>Live</span>
+            <strong>Official Links</strong>
+            <p>X, Telegram, and contract address are listed publicly.</p>
+          </div>
+
+          <div class="trust-item">
+            <span>Being Built</span>
+            <strong>Creator Fund</strong>
+            <p>Future community-powered growth and creator initiatives.</p>
+          </div>
+
+          <div class="trust-item">
+            <span>Future</span>
+            <strong>Governance</strong>
+            <p>Community voting and open decision-making as the ecosystem matures.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section roadmap">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Journey</p>
+        <h2>The movement begins now.</h2>
+      </div>
+
       <div class="timeline">
-        <div><b>Phase 1</b><p>Launch, website, organic community growth, brand foundation.</p></div>
-        <div><b>Phase 2</b><p>Transparency dashboard, Creator Fund concept, global marketing.</p></div>
-        <div><b>Phase 3</b><p>Community governance, partnerships, first humanitarian initiatives.</p></div>
-        <div><b>Phase 4</b><p>Global impact through community-led humanitarian projects.</p></div>
+        <article class="reveal">
+          <span>Phase 01</span>
+          <h3>Launch</h3>
+          <p>Fair launch, early community, official channels, website, and brand foundation.</p>
+        </article>
+
+        <article class="reveal">
+          <span>Phase 02</span>
+          <h3>Community Growth</h3>
+          <p>Organic marketing, X activation, Telegram growth, partnerships, and awareness.</p>
+        </article>
+
+        <article class="reveal">
+          <span>Phase 03</span>
+          <h3>Open Trust</h3>
+          <p>Transparency dashboard, public wallets, future governance, and reporting systems.</p>
+        </article>
+
+        <article class="reveal">
+          <span>Phase 04</span>
+          <h3>Global Impact</h3>
+          <p>Community-led humanitarian initiatives and long-term ecosystem expansion.</p>
+        </article>
       </div>
     </section>
 
-    <section id="links" class="section links reveal">
-      <span class="eyebrow">Official Links</span>
-      <h2>Verify before you trust.</h2>
-      <div class="link-grid">
-        <a href="https://x.com/SaintDevSol" target="_blank" rel="noopener">X Official</a>
-        <a href="https://t.co/1RIIzHQs0j" target="_blank" rel="noopener">Telegram</a>
-        <button onclick="copyCA()">Copy Contract</button>
+    <section id="faq" class="section faq">
+      <div class="section-heading reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2>Simple answers. No noise.</h2>
       </div>
-      <p>Always verify the official contract before purchasing. Beware of fake tokens, fake links, and impersonators.</p>
+
+      <div class="faq-list reveal">
+        <details>
+          <summary>What is $SAINT?</summary>
+          <p>$SAINT is a Solana-powered community movement built around trust, transparency, and purpose.</p>
+        </details>
+
+        <details>
+          <summary>Is $SAINT a memecoin?</summary>
+          <p>$SAINT began in the Web3 culture, but the brand is focused on building a long-term community movement.</p>
+        </details>
+
+        <details>
+          <summary>What does “Open Trust” mean?</summary>
+          <p>It means important information should be visible, verifiable, and shared openly with the community.</p>
+        </details>
+
+        <details>
+          <summary>Where can I join the community?</summary>
+          <p>You can join through the official Telegram and follow the official X account listed on this website.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="join" class="section join reveal">
+      <div class="join-card">
+        <img src="assets/saint-logo.jpg" alt="$SAINT logo" />
+        <p class="eyebrow">Join The Movement</p>
+        <h2>Become a Saint.</h2>
+        <p>Together, we can build trust through community.</p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="https://t.co/1RIIzHQs0j" target="_blank" rel="noopener">Join Telegram</a>
+          <a class="btn secondary" href="https://x.com/SaintDevSol" target="_blank" rel="noopener">Follow on X</a>
+          <a class="btn ghost dark" href="#buy">Copy Contract</a>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <img src="assets/saint-logo.jpg" alt="$SAINT logo">
-    <h3>A Crypto Community With a Soul.</h3>
-    <p>Built with purpose. Powered by community. Designed for humanity.</p>
+    <div>
+      <img src="assets/saint-logo.jpg" alt="$SAINT logo" />
+      <strong>SAINT</strong>
+    </div>
+    <p>A Crypto Community With a Soul.</p>
     <small>© 2026 $SAINT. Cryptocurrency involves risk. Nothing on this website is financial advice.</small>
   </footer>
+
+  <div class="toast" id="toast">Contract copied</div>
 
   <script src="script.js"></script>
 </body>
