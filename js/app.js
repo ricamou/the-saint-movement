@@ -160,3 +160,22 @@ function createParticles() {
     field.appendChild(dot);
   }
 }
+
+
+function openPhantomApp(event) {
+  if (event) event.preventDefault();
+
+  showToast("Opening Phantom...");
+
+  const startedAt = Date.now();
+
+  // Attempts to open the Phantom app directly.
+  window.location.href = "phantom://";
+
+  // If the app does not open, send the user to the official Phantom download page.
+  setTimeout(() => {
+    if (Date.now() - startedAt < 2200) {
+      window.location.href = "https://phantom.app/download";
+    }
+  }, 1400);
+}

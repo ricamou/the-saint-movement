@@ -28,3 +28,8 @@ CA: GUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump
 The previous Phantom swap deep link was replaced with a Phantom browse deep link, which opens Pump.fun inside Phantom's in-app browser:
 
 https://phantom.app/ul/browse/https%3A%2F%2Fpump.fun%2Fcoin%2FGUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump?ref=https%3A%2F%2Fwww.saintfamily.org
+
+
+## v3.5 Phantom Update
+
+The Phantom button now only attempts to open the Phantom app directly using `phantom://`. If the app is not installed, it falls back to the official Phantom download page.
