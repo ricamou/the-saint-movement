@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://saintmovement.org/sitemap.xml
+Sitemap: https://www.saintfamily.org/sitemap.xml

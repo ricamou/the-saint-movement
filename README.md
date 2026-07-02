@@ -1,20 +1,12 @@
-# The SAINT Movement v1.0 Launch
+# The SAINT Movement v2.0
 
-Static website ready for GitHub and Vercel.
+Premium static website ready for GitHub + Vercel.
 
-## Pages
+New: animated hero, live DexScreener dashboard, Phantom swap deeplink, Pump.fun buy button, light/dark mode, SEO metadata, and refined mobile.
 
-- Home: `index.html`
-- Founder's Vision: `founders-vision.html`
-- Transparency: `transparency.html`
-- Creator Fund: `creator-fund.html`
+DexScreener API: https://api.dexscreener.com/tokens/v1/solana/GUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump
+Phantom swap: https://phantom.app/ul/v1/swap/?buy=solana%3A101%2Faddress%3AGUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump&sell=
 
-## Structure
+Holder count links to Solscan because real-time holders generally require a dedicated indexer/API.
 
-- `assets/logo/saint-logo.jpg`
-- `css/styles.css`
-- `js/app.js`
-
-## Deploy
-
-Upload all files and folders to the GitHub repository root. Vercel will automatically deploy the site.
+Pump.fun: https://pump.fun/coin/GUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump
