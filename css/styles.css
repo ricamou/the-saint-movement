@@ -192,52 +192,80 @@ html[data-theme="light"] .contact-form-card textarea {
 .language-switcher{position:relative}.language-button{min-width:112px;height:42px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--text);font-weight:900;cursor:pointer;padding:0 12px}.language-menu{position:absolute;right:0;top:52px;width:170px;padding:8px;border:1px solid var(--line);border-radius:18px;background:rgba(6,24,39,.94);backdrop-filter:blur(20px);box-shadow:var(--shadow);opacity:0;pointer-events:none;transform:translateY(8px);transition:.2s ease}html[data-theme=light] .language-menu{background:rgba(255,255,255,.96)}.language-switcher:hover .language-menu,.language-switcher:focus-within .language-menu{opacity:1;pointer-events:auto;transform:translateY(0)}.language-menu button{display:block;width:100%;border:0;background:transparent;color:var(--text);text-align:left;padding:10px 12px;border-radius:12px;font-weight:850;cursor:pointer}.language-menu button:hover{background:var(--panel)}@media(max-width:640px){.language-button{min-width:46px;width:46px;overflow:hidden;white-space:nowrap}.language-button span{display:none}}
 
 
-/* v4.1 Language gate */
-.language-gate-body {
-  min-height: 100vh;
-}
-
-.language-gate {
-  min-height: 100vh;
+/* v4.2 First-visit language modal */
+.language-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
   display: grid;
   place-items: center;
-  padding: 32px;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(230,195,106,.20), transparent 34%),
+    rgba(2, 10, 18, .84);
+  backdrop-filter: blur(22px);
+  transition: opacity .28s ease, visibility .28s ease;
 }
 
-.language-gate-card {
+.language-modal.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.language-modal-card {
   width: min(760px, 100%);
   border: 1px solid var(--line);
   border-radius: 42px;
-  background: var(--panel);
-  backdrop-filter: blur(22px);
-  box-shadow: var(--shadow);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.055)),
+    rgba(6,24,39,.86);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 34px 110px rgba(0,0,0,.45);
   text-align: center;
-  padding: 54px 34px;
+  padding: 48px 34px;
 }
 
-.gate-logo {
-  margin-top: 0;
+html[data-theme="light"] .language-modal-card {
+  background: rgba(255,255,255,.94);
 }
 
-.language-gate-card h1 {
-  font-size: clamp(64px, 10vw, 118px);
-  margin-bottom: 16px;
+.language-modal-logo {
+  width: 112px;
+  height: 112px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(230,195,106,.34), transparent 70%);
 }
 
-.language-gate-subtitle {
+.language-modal-logo img {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  box-shadow: 0 0 60px rgba(230,195,106,.42);
+}
+
+.language-modal-card h2 {
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.language-modal-text {
   color: var(--muted);
-  font-size: 20px;
-  margin-bottom: 32px;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 28px;
 }
 
-.language-choice-grid {
+.language-modal-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
-  margin-top: 28px;
+  margin-top: 22px;
 }
 
-.language-choice-grid button {
+.language-modal-grid button {
   border: 1px solid var(--line);
   border-radius: 24px;
   background: rgba(255,255,255,.075);
@@ -248,40 +276,53 @@ html[data-theme="light"] .contact-form-card textarea {
   transition: .22s ease;
 }
 
-.language-choice-grid button:hover {
+.language-modal-grid button:hover {
   transform: translateY(-3px);
   border-color: rgba(230,195,106,.55);
   box-shadow: 0 18px 45px rgba(0,0,0,.18);
 }
 
-.language-choice-grid strong {
+.language-modal-grid strong {
   display: block;
   font-size: 22px;
   margin-bottom: 6px;
 }
 
-.language-choice-grid span {
+.language-modal-grid span {
   color: var(--muted);
 }
 
-.language-skip {
+.language-modal-skip {
   display: inline-flex;
   margin-top: 26px;
+  border: 0;
+  background: transparent;
   color: var(--gold);
   font-weight: 950;
+  cursor: pointer;
 }
 
-@media(max-width:640px) {
-  .language-gate {
+@media(max-width: 640px) {
+  .language-modal {
     padding: 18px;
   }
 
-  .language-gate-card {
-    padding: 38px 20px;
+  .language-modal-card {
+    padding: 34px 20px;
     border-radius: 32px;
   }
 
-  .language-choice-grid {
+  .language-modal-grid {
     grid-template-columns: 1fr;
+  }
+
+  .language-modal-logo {
+    width: 96px;
+    height: 96px;
+  }
+
+  .language-modal-logo img {
+    width: 74px;
+    height: 74px;
   }
 }

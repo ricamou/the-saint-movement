@@ -39,6 +39,6 @@ The Phantom button now only attempts to open the Phantom app directly using `pha
 Added language selector with English, Portuguese, Spanish and Simplified Chinese. Selected language is saved automatically.
 
 
-## v4.1 Language Gate
+## v4.2 Language Modal
 
-The root `index.html` is now a language selection page. The main website home is `home.html`. The selected language is saved in localStorage and applied to the site.
+`index.html` remains the main Home. On first visit only, a premium language selection modal appears. After a language is selected, the choice is saved in localStorage. The language can still be changed from the selector in the navbar.

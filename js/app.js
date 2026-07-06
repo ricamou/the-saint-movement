@@ -187,3 +187,34 @@ function openPhantomApp(event) {
     }
   }, 1400);
 }
+
+
+/* v4.2 first-visit language modal */
+function chooseInitialLanguage(lang) {
+  localStorage.setItem("saint-lang", lang);
+  localStorage.setItem("saint-language-confirmed", "true");
+
+  if (typeof window.setSaintLanguage === "function") {
+    window.setSaintLanguage(lang);
+  }
+
+  const modal = document.getElementById("languageModal");
+  if (modal) {
+    modal.classList.add("hidden");
+    setTimeout(() => modal.remove(), 320);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("languageModal");
+  if (!modal) return;
+
+  const confirmed = localStorage.getItem("saint-language-confirmed") === "true";
+
+  if (confirmed) {
+    modal.remove();
+    return;
+  }
+
+  document.body.classList.add("language-modal-open");
+});
