@@ -41,40 +41,40 @@
     </a>
 
     <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="founders-vision.html">Vision</a>
-      <a href="transparency.html">Transparency</a>
-      <a href="creator-fund.html">Creator Fund</a>
-      <a href="community.html">Community</a>
-      <a class="active" href="contact.html">Contact</a>
+      <a href="index.html" data-i18n="home">Home</a>
+      <a href="founders-vision.html" data-i18n="vision">Vision</a>
+      <a href="transparency.html" data-i18n="transparency">Transparency</a>
+      <a href="creator-fund.html" data-i18n="creator">Creator Fund</a>
+      <a href="community.html" data-i18n="community">Community</a>
+      <a class="active" href="contact.html" data-i18n="contact">Contact</a>
     </nav>
 
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+      <div class="language-switcher"><button class="language-button" type="button">🌐 <span data-lang-current>English</span></button><div class="language-menu"><button type="button" data-lang="en">English</button><button type="button" data-lang="pt">Português</button><button type="button" data-lang="es">Español</button><button type="button" data-lang="zh">中文</button></div></div><button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
         <span class="sun">☀</span><span class="moon">☾</span>
       </button>
-      <a class="nav-cta" href="https://pump.fun/coin/GUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump" target="_blank" rel="noopener">Buy</a>
+      <a class="nav-cta" href="https://pump.fun/coin/GUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump" target="_blank" rel="noopener" data-i18n="buy">Buy</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
     </div>
   </header>
 
   <aside class="mobile-nav" id="mobileNav">
-    <a href="index.html">Home</a>
-    <a href="founders-vision.html">Vision</a>
-    <a href="transparency.html">Transparency</a>
-    <a href="creator-fund.html">Creator Fund</a>
-    <a href="community.html">Community</a>
-    <a href="contact.html">Contact</a>
-    <a href="https://pump.fun/coin/GUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump" target="_blank" rel="noopener">Buy on Pump.fun</a>
-    <a href="#" onclick="openPhantomApp(event)" target="_blank" rel="noopener">Open Phantom</a>
+    <a href="index.html" data-i18n="home">Home</a>
+    <a href="founders-vision.html" data-i18n="vision">Vision</a>
+    <a href="transparency.html" data-i18n="transparency">Transparency</a>
+    <a href="creator-fund.html" data-i18n="creator">Creator Fund</a>
+    <a href="community.html" data-i18n="community">Community</a>
+    <a href="contact.html" data-i18n="contact">Contact</a>
+    <a href="https://pump.fun/coin/GUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump" target="_blank" rel="noopener" data-i18n="pump">Buy on Pump.fun</a>
+    <a href="#" onclick="openPhantomApp(event)" target="_blank" rel="noopener" data-i18n="phantom">Open Phantom</a>
   </aside>
 
   <main>
     <section class="subhero page-section contact-hero">
       <div class="container narrow reveal">
-        <p class="eyebrow">Contact</p>
-        <h1>Let's Build Something Together.</h1>
-        <p>Use the form below to prepare an email to the official SAINT contact address.</p>
+        <p class="eyebrow" data-i18n="contact">Contact</p>
+        <h1 data-i18n="contactTitle">Let's Build Something Together.</h1>
+        <p data-i18n="contactText">Use the form below to prepare an email to the official SAINT contact address.</p>
       </div>
     </section>
 
@@ -91,7 +91,7 @@
 
           <div class="contact-info-list">
             <div>
-              <span>Email</span>
+              <span data-i18n="email">Email</span>
               <strong>contact@saintfamily.org</strong>
             </div>
             <div>
@@ -118,42 +118,42 @@
           </div>
 
           <label>
-            <span>Full Name</span>
-            <input id="name" name="name" type="text" placeholder="Your name" required />
+            <span data-i18n="name">Full Name</span>
+            <input id="name" name="name" type="text" placeholder="Your name" data-i18n-placeholder="name" required />
           </label>
 
           <label>
-            <span>Email</span>
+            <span data-i18n="email">Email</span>
             <input id="email" name="email" type="email" placeholder="you@example.com" required />
           </label>
 
           <label>
-            <span>Subject</span>
-            <input id="subject" name="subject" type="text" placeholder="How can we help?" required />
+            <span data-i18n="subject">Subject</span>
+            <input id="subject" name="subject" type="text" placeholder="How can we help?" data-i18n-placeholder="subject" required />
           </label>
 
           <label>
-            <span>Reason</span>
+            <span data-i18n="reason">Reason</span>
             <select id="reason" name="reason">
               <option>Partnership</option>
               <option>Marketing</option>
-              <option>Community</option>
-              <option>Creator Fund</option>
+              <option data-i18n="community">Community</option>
+              <option data-i18n="creator">Creator Fund</option>
               <option>Technical Support</option>
               <option>Other</option>
             </select>
           </label>
 
           <label>
-            <span>Message</span>
-            <textarea id="message" name="message" rows="7" placeholder="Write your message here..." required></textarea>
+            <span data-i18n="message">Message</span>
+            <textarea id="message" name="message" rows="7" placeholder="Write your message here..." data-i18n-placeholder="message" required></textarea>
           </label>
 
-          <button class="btn primary pumpfun" type="submit">Send Message</button>
+          <button class="btn primary pumpfun" type="submit" data-i18n="send">Send Message</button>
 
           <div class="contact-success" id="thanks">
-            <h3>✅ Thank you!</h3>
-            <p>Your email application has been opened. Please send the message from there, and we’ll get back to you as soon as possible.</p>
+            <h3 data-i18n="thanks">✅ Thank you!</h3>
+            <p data-i18n="thanksText">Your email application has been opened. Please send the message from there, and we’ll get back to you as soon as possible.</p>
           </div>
         </form>
       </div>
@@ -163,7 +163,7 @@
   <footer class="footer">
     <div class="footer-brand">
       <img src="assets/logo/saint-logo.jpg" alt="SAINT logo" />
-      <div><strong>The SAINT Movement</strong><span>A Crypto Community With a Soul.</span></div>
+      <div><strong>The SAINT Movement</strong><span data-i18n="heroSubtitle">A Crypto Community With a Soul.</span></div>
     </div>
 
     <div class="footer-links">

@@ -33,3 +33,7 @@ https://phantom.app/ul/browse/https%3A%2F%2Fpump.fun%2Fcoin%2FGUdYAzh14TQcwUSBw7
 ## v3.5 Phantom Update
 
 The Phantom button now only attempts to open the Phantom app directly using `phantom://`. If the app is not installed, it falls back to the official Phantom download page.
+
+
+## v4.0 Global
+Added language selector with English, Portuguese, Spanish and Simplified Chinese. Selected language is saved automatically.

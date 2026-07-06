@@ -188,3 +188,5 @@ html[data-theme="light"] .contact-form-card textarea {
     padding: 24px;
   }
 }
+
+.language-switcher{position:relative}.language-button{min-width:112px;height:42px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--text);font-weight:900;cursor:pointer;padding:0 12px}.language-menu{position:absolute;right:0;top:52px;width:170px;padding:8px;border:1px solid var(--line);border-radius:18px;background:rgba(6,24,39,.94);backdrop-filter:blur(20px);box-shadow:var(--shadow);opacity:0;pointer-events:none;transform:translateY(8px);transition:.2s ease}html[data-theme=light] .language-menu{background:rgba(255,255,255,.96)}.language-switcher:hover .language-menu,.language-switcher:focus-within .language-menu{opacity:1;pointer-events:auto;transform:translateY(0)}.language-menu button{display:block;width:100%;border:0;background:transparent;color:var(--text);text-align:left;padding:10px 12px;border-radius:12px;font-weight:850;cursor:pointer}.language-menu button:hover{background:var(--panel)}@media(max-width:640px){.language-button{min-width:46px;width:46px;overflow:hidden;white-space:nowrap}.language-button span{display:none}}
