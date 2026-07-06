@@ -1,44 +1,33 @@
-# The SAINT Movement v3.0
+# The SAINT Movement
 
-Premium Web3 static website ready for GitHub + Vercel.
+Official website of **The SAINT Movement**.
 
-## v3.0 Highlights
+## Current Version
 
-- Cinematic Apple/Stripe-style hero
+**v4.2 Global**
+
+## Features
+
+- Premium Web3 design
+- Language selection modal on first visit
+- English, Português, Español and 中文
 - Live Transparency Center
-- Live DexScreener market metrics
-- SAINT Health Score
-- Lightweight activity chart
+- DexScreener market data integration
 - Pump.fun buy button
-- Phantom browse deep link
-- Community map
-- Holder Journey
-- Community Wall page
+- Phantom app button
+- Contact page using official email
 - Light/Dark mode
-- Mobile refinements
+- Mobile responsive layout
 - SEO files included
+
+## Official Website
+
+https://www.saintfamily.org
 
 ## Official CA
 
 CA: GUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump
 
+## Deploy
 
-## Phantom Fix
-
-The previous Phantom swap deep link was replaced with a Phantom browse deep link, which opens Pump.fun inside Phantom's in-app browser:
-
-https://phantom.app/ul/browse/https%3A%2F%2Fpump.fun%2Fcoin%2FGUdYAzh14TQcwUSBw79rnFJHZCv64fugTEsq1etDpump?ref=https%3A%2F%2Fwww.saintfamily.org
-
-
-## v3.5 Phantom Update
-
-The Phantom button now only attempts to open the Phantom app directly using `phantom://`. If the app is not installed, it falls back to the official Phantom download page.
-
-
-## v4.0 Global
-Added language selector with English, Portuguese, Spanish and Simplified Chinese. Selected language is saved automatically.
-
-
-## v4.2 Language Modal
-
-`index.html` remains the main Home. On first visit only, a premium language selection modal appears. After a language is selected, the choice is saved in localStorage. The language can still be changed from the selector in the navbar.
+This is a static website ready for GitHub + Vercel.
