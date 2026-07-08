@@ -1,24 +1,25 @@
-# CommerceHub V2 ML PRO — Functional Fix
+# CommerceHub Enterprise V3
 
-Correção das rotas ausentes para iniciar o fluxo de venda no Mercado Livre.
-
-## Adicionado/corrigido
-
-- `/setup`
-- `/new-product`
-- `/sell-flow`
-- `/api/foundation/status`
-- `/api/setup/check`
-- `/api/routes`
+Base limpa e modular focada em começar vendas no Mercado Livre.
 
 ## Testes
 
-- `/api/health` deve retornar `v2-ml-pro-functional-fix`
-- `/setup`
-- `/new-product`
-- `/sell-flow`
-- `/api/routes`
-- `/products`
-- `/mercado-livre`
+- /api/health
+- /
+- /setup
+- /api/backend/health
+- /api/foundation/seed
+- /new-product
+- /products
+- /mercado-livre
+- /sell-flow
+- /api/routes
 
-Se o `/api/health` ainda mostrar `enterprise-backend-reviewed-stable`, a Vercel não recebeu esta versão ou você subiu no projeto/domínio errado.
+## Arquitetura
+
+- core
+- db
+- repositories
+- services
+- ui
+- api/index.py
