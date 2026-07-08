@@ -183,3 +183,136 @@ def sell_flow():
     return HTMLResponse(shell('Fluxo de Venda', f"<div class='card'><h2>Fluxo para vender no Mercado Livre</h2><ol><li>Conectar Mercado Livre.</li><li>Cadastrar produto.</li><li>Gerar preview.</li><li>Validar categoria.</li><li>Publicar anúncio.</li><li>Acompanhar pedidos.</li></ol>{btn('/mercado-livre','Mercado Livre')}{btn('/new-product','Cadastrar Produto')}{btn('/products','Produtos')}</div>"))
 @app.get('/favicon.ico')
 def favicon(): return {'ok':True}
+
+
+# =========================================================
+# FUNCTIONAL FIX ROUTES - V2 ML PRO
+# Rotas adicionadas para eliminar 404 e permitir operação básica.
+# =========================================================
+
+def _safe_json(obj):
+    return json.dumps(obj, ensure_ascii=False, indent=2)
+
+def _system_status_fix():
+    try:
+        return state()
+    except Exception:
+        return {"version": "v2-ml-pro-functional-fix", "mode": db.mode(), "supabase": db.configured()}
+
+@app.get("/setup", response_class=HTMLResponse)
+async def setup_page_functional_fix():
+    content = f"""
+<div class='card'>
+<h2>Setup CommerceHub</h2>
+<p>Use esta página para preparar o sistema antes de vender no Mercado Livre.</p>
+<pre>{_safe_json(_system_status_fix())}</pre>
+{btn('/api/health','API Health')}
+{btn('/api/backend/health','Backend Health')}
+{btn('/api/foundation/status','Foundation Status')}
+{btn('/api/foundation/seed','Criar dados iniciais')}
+{btn('/new-product','Cadastrar produto')}
+{btn('/mercado-livre','Mercado Livre')}
+</div>
+
+<div class='card'>
+<h2>Ordem correta</h2>
+<ol>
+<li>Confirmar Supabase configurado.</li>
+<li>Rodar o SQL do arquivo <b>supabase_schema.sql</b> no Supabase.</li>
+<li>Clicar em <b>Criar dados iniciais</b>.</li>
+<li>Cadastrar produto.</li>
+<li>Conectar Mercado Livre.</li>
+<li>Gerar preview e publicar.</li>
+</ol>
+</div>
+"""
+    return HTMLResponse(shell("Setup", content), status_code=200)
+
+
+@app.get("/sell-flow", response_class=HTMLResponse)
+async def sell_flow_functional_fix():
+    content = f"""
+<div class='card'>
+<h2>Fluxo de venda Mercado Livre</h2>
+<ol>
+<li><b>Fornecedor</b>: criado automaticamente no primeiro produto.</li>
+<li><b>Produto</b>: cadastre em Novo Produto.</li>
+<li><b>Estoque</b>: salvo junto com o produto.</li>
+<li><b>Preço</b>: calculado automaticamente.</li>
+<li><b>IA</b>: título e descrição otimizados no preview.</li>
+<li><b>Mercado Livre</b>: conecte a conta e publique.</li>
+<li><b>Pedidos</b>: consulte em Mercado Livre → Pedidos.</li>
+</ol>
+{btn('/new-product','Cadastrar produto')}
+{btn('/products','Ver produtos')}
+{btn('/mercado-livre','Mercado Livre')}
+{btn('/api/ml/orders','Pedidos JSON')}
+</div>
+"""
+    return HTMLResponse(shell("Fluxo de Venda", content), status_code=200)
+
+
+@app.get("/new-product", response_class=HTMLResponse)
+async def new_product_page_functional_fix():
+    content = """
+<div class='card'>
+<h2>Cadastrar produto para vender</h2>
+<form method='post' action='/api/products/create'>
+<label>SKU</label>
+<input name='sku' value='PROD-001'>
+<label>Nome do produto</label>
+<input name='name' value='Produto Teste CommerceHub'>
+<label>Marca</label>
+<input name='brand' value='CommerceHub'>
+<label>Categoria</label>
+<input name='category' value='Produto'>
+<label>Custo</label>
+<input name='cost_price' value='20'>
+<label>Estoque</label>
+<input name='stock' value='5'>
+<label>Descrição</label>
+<textarea name='description'>Produto novo, pronto para venda no Mercado Livre.</textarea>
+<button type='submit'>Salvar produto</button>
+</form>
+</div>
+"""
+    return HTMLResponse(shell("Novo Produto", content), status_code=200)
+
+
+@app.get("/api/foundation/status")
+async def foundation_status_functional_fix():
+    return {
+        "success": True,
+        "version": "v2-ml-pro-functional-fix",
+        "mode": db.mode(),
+        "supabase_configured": db.configured(),
+        "tables": ["companies", "suppliers", "products", "inventory", "orders", "listings", "oauth_tokens", "logs", "webhooks"],
+        "routes_fixed": ["/setup", "/new-product", "/sell-flow"],
+        "next": "/api/foundation/seed"
+    }
+
+
+@app.get("/api/setup/check")
+async def setup_check_functional_fix():
+    checks = {}
+    for table in ["companies", "suppliers", "products", "inventory", "oauth_tokens", "logs"]:
+        try:
+            res = await db.select(table, "select=*&limit=1")
+            checks[table] = {
+                "success": bool(res.get("success")),
+                "mode": res.get("mode"),
+                "rows": len(res.get("data", []) if isinstance(res.get("data"), list) else []),
+                "error": str(res.get("error", ""))[:220],
+            }
+        except Exception as exc:
+            checks[table] = {"success": False, "error": str(exc)[:220]}
+    return {"success": True, "version": "v2-ml-pro-functional-fix", "checks": checks}
+
+
+@app.get("/api/routes")
+async def routes_list_functional_fix():
+    return {
+        "success": True,
+        "version": "v2-ml-pro-functional-fix",
+        "routes": sorted([getattr(r, "path", "") for r in app.routes if getattr(r, "path", "")])
+    }
