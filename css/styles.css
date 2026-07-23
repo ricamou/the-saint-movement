@@ -326,3 +326,761 @@ html[data-theme="light"] .language-modal-card {
     height: 74px;
   }
 }
+
+
+/* v5.4 Animated mascot */
+.mascot-motion-section {
+  padding-top: 70px;
+}
+
+.mascot-motion-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 34px;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 44px;
+  background:
+    radial-gradient(circle at 78% 28%, rgba(230,195,106,.22), transparent 36%),
+    linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.045));
+  backdrop-filter: blur(22px);
+  box-shadow: var(--shadow);
+  padding: 42px;
+}
+
+.mascot-motion-copy {
+  position: relative;
+  z-index: 4;
+}
+
+.mascot-motion-copy h2 {
+  margin-top: 12px;
+}
+
+.mascot-motion-copy p {
+  max-width: 560px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.mascot-motion-buttons {
+  justify-content: flex-start;
+}
+
+.mascot-motion-art {
+  position: relative;
+  min-height: 580px;
+  display: grid;
+  place-items: center;
+  perspective: 900px;
+}
+
+.mascot-motion-art img {
+  position: relative;
+  z-index: 5;
+  width: min(460px, 100%);
+  border-radius: 32px;
+  filter:
+    drop-shadow(0 34px 55px rgba(0,0,0,.38))
+    drop-shadow(0 0 35px rgba(230,195,106,.28));
+  animation: saintMascotFloat 4.8s ease-in-out infinite;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+.mascot-motion-panel:hover .mascot-motion-art img {
+  animation-play-state: paused;
+  transform: translateY(-10px) rotateX(3deg) rotateY(-4deg) scale(1.02);
+}
+
+.mascot-motion-glow {
+  position: absolute;
+  z-index: 1;
+  width: 390px;
+  height: 390px;
+  border-radius: 999px;
+  background: rgba(230,195,106,.30);
+  filter: blur(76px);
+  animation: saintMascotGlow 3.8s ease-in-out infinite;
+}
+
+.mascot-motion-ring {
+  position: absolute;
+  z-index: 2;
+  border: 1px solid rgba(230,195,106,.26);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ring-a {
+  width: 440px;
+  height: 150px;
+  animation: saintMascotOrbit 14s linear infinite;
+}
+
+.ring-b {
+  width: 520px;
+  height: 180px;
+  opacity: .65;
+  animation: saintMascotOrbitReverse 20s linear infinite;
+}
+
+.mascot-motion-art::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  width: 58%;
+  height: 18px;
+  bottom: 34px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(0,0,0,.38), transparent 70%);
+  filter: blur(7px);
+  animation: saintMascotShadow 4.8s ease-in-out infinite;
+}
+
+@keyframes saintMascotFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-.7deg) scale(1);
+  }
+  50% {
+    transform: translateY(-18px) rotate(.7deg) scale(1.012);
+  }
+}
+
+@keyframes saintMascotGlow {
+  0%, 100% {
+    opacity: .55;
+    transform: scale(.94);
+  }
+  50% {
+    opacity: .92;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes saintMascotOrbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes saintMascotOrbitReverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes saintMascotShadow {
+  0%, 100% {
+    transform: scaleX(.95);
+    opacity: .35;
+  }
+  50% {
+    transform: scaleX(.78);
+    opacity: .22;
+  }
+}
+
+@media(max-width: 980px) {
+  .mascot-motion-panel {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+
+  .mascot-motion-copy {
+    text-align: center;
+  }
+
+  .mascot-motion-copy p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mascot-motion-buttons {
+    justify-content: center;
+  }
+
+  .mascot-motion-art {
+    min-height: auto;
+  }
+}
+
+@media(max-width: 640px) {
+  .mascot-motion-panel {
+    padding: 22px;
+    border-radius: 32px;
+  }
+
+  .mascot-motion-art img {
+    width: min(360px, 100%);
+    border-radius: 24px;
+  }
+
+  .ring-a,
+  .ring-b {
+    display: none;
+  }
+}
+
+.sanctuary-page{min-height:100vh;display:grid;place-items:center;padding:145px 0 80px}
+.sanctuary-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+.sanctuary-copy h1{margin-left:0}.sanctuary-lead{color:var(--muted);font-size:20px;line-height:1.7}
+.sanctuary-warning{display:inline-flex;gap:8px;padding:12px 16px;margin:8px 0 24px;border:1px solid rgba(230,195,106,.3);border-radius:999px;background:rgba(230,195,106,.08);color:var(--muted)}
+.sanctuary-warning strong{color:var(--gold)}#sanctuaryForm label{display:block;color:var(--gold);font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.12em;margin-bottom:9px}
+.sanctuary-input{display:flex;gap:10px;padding:9px;border:1px solid var(--line);border-radius:24px;background:var(--panel)}
+.sanctuary-input input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--text);padding:13px}
+.sanctuary-input button{border:0;border-radius:18px;background:var(--gold);color:var(--graphite);font-weight:950;padding:0 18px;cursor:pointer}
+.sanctuary-status{position:relative;overflow:hidden;margin-top:16px;padding:17px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.055)}
+.sanctuary-status p{margin:0;color:var(--muted)}.sanctuary-status span{position:absolute;inset:0 auto 0 -35%;width:30%;background:linear-gradient(90deg,transparent,rgba(230,195,106,.25),transparent);opacity:0}
+.sanctuary-status.scanning span{opacity:1;animation:scan 1.1s linear infinite}@keyframes scan{to{transform:translateX(450%)}}
+.sanctuary-mascot{position:relative;min-height:620px;display:grid;place-items:center}.sanctuary-mascot img{position:relative;z-index:3;width:min(500px,100%);filter:drop-shadow(0 35px 60px rgba(0,0,0,.4));animation:guardianFloat 4.8s ease-in-out infinite}
+.sanctuary-glow{position:absolute;width:430px;height:430px;border-radius:50%;background:rgba(230,195,106,.28);filter:blur(80px);animation:guardianGlow 4s ease-in-out infinite}
+.guardian-message{position:absolute;z-index:4;right:0;bottom:45px;max-width:300px;padding:16px 18px;border:1px solid var(--line);border-radius:22px 22px 6px 22px;background:rgba(6,24,39,.88);color:#fff}
+@keyframes guardianFloat{50%{transform:translateY(-20px)}}@keyframes guardianGlow{50%{transform:scale(1.08);opacity:.9}}
+.sanctuary-result{border:1px solid var(--line);border-radius:42px;padding:38px;background:var(--panel);box-shadow:var(--shadow)}
+.sanctuary-result.holder-success{border-color:rgba(108,255,154,.4)}.sanctuary-result>p{color:var(--muted)}
+.sanctuary-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}.sanctuary-cards article{padding:22px;min-height:140px;border:1px solid var(--line);border-radius:24px;background:var(--panel-solid)}
+.sanctuary-cards span{display:block;color:var(--gold);font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.1em}.sanctuary-cards strong{display:block;margin-top:18px;font-size:24px;overflow-wrap:anywhere}
+.holder-progress{margin-top:20px;padding:20px;border:1px solid var(--line);border-radius:22px}.holder-progress>div:first-child{display:flex;justify-content:space-between;color:var(--muted);margin-bottom:12px}
+.progress-track{height:12px;border-radius:999px;background:rgba(255,255,255,.1);overflow:hidden}.progress-track span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--gold),#6cff9a);transition:.6s}
+.sanctuary-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:26px}.disabled{opacity:.38;pointer-events:none}.sanctuary-note{font-size:13px!important;margin-top:22px}
+@media(max-width:980px){.sanctuary-grid{grid-template-columns:1fr}.sanctuary-copy{text-align:center}.sanctuary-copy h1{margin-left:auto}.sanctuary-mascot{min-height:500px}.sanctuary-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.sanctuary-input{flex-direction:column}.sanctuary-input button{min-height:52px}.sanctuary-cards{grid-template-columns:1fr}.sanctuary-result{padding:24px}.guardian-message{right:10px}.holder-progress>div:first-child{flex-direction:column;gap:8px}}
+
+
+/* v5.8 Mobile Sanctuary menu fix */
+@media (max-width: 900px) {
+  .mobile-nav {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 110px;
+    padding-bottom: 60px;
+    max-height: 100dvh;
+  }
+
+  .mobile-nav a {
+    flex: 0 0 auto;
+  }
+}
+
+
+/* v5.9 Premium polish */
+:root {
+  --radius-xl: 38px;
+  --radius-lg: 26px;
+  --focus-ring: 0 0 0 4px rgba(230, 195, 106, .18);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 1px solid rgba(230,195,106,.75);
+  box-shadow: var(--focus-ring);
+}
+
+.navbar {
+  transition:
+    background .25s ease,
+    border-color .25s ease,
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 18px 55px rgba(0,0,0,.16);
+}
+
+.desktop-nav a,
+.mobile-nav a,
+.footer-links a {
+  position: relative;
+}
+
+.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -8px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--gold);
+  transition: left .2s ease, right .2s ease;
+}
+
+.desktop-nav a:hover::after,
+.desktop-nav a.active::after {
+  left: 14%;
+  right: 14%;
+}
+
+.btn,
+.nav-cta,
+.sanctuary-input button,
+.contact-form-card button {
+  min-height: 48px;
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    opacity .18s ease;
+}
+
+.btn:hover,
+.nav-cta:hover,
+.sanctuary-input button:hover,
+.contact-form-card button:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active,
+.nav-cta:active,
+.sanctuary-input button:active,
+.contact-form-card button:active {
+  transform: translateY(0) scale(.985);
+}
+
+.card,
+.metric-card,
+.contact-info-panel,
+.contact-form-card,
+.mascot-motion-panel,
+.sanctuary-result,
+.sanctuary-cards article {
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.card:hover,
+.metric-card:hover,
+.contact-info-panel:hover,
+.contact-form-card:hover,
+.sanctuary-cards article:hover {
+  transform: translateY(-4px);
+  border-color: rgba(230,195,106,.28);
+}
+
+img {
+  max-width: 100%;
+}
+
+.sanctuary-input {
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.sanctuary-input:focus-within {
+  border-color: rgba(230,195,106,.55);
+  box-shadow: var(--focus-ring);
+}
+
+.sanctuary-input input {
+  font-size: 16px;
+}
+
+.sanctuary-status {
+  transition: border-color .25s ease, background .25s ease;
+}
+
+.sanctuary-status.scanning {
+  border-color: rgba(230,195,106,.38);
+  background: rgba(230,195,106,.07);
+}
+
+.sanctuary-result.holder-success {
+  animation: sanctuaryUnlock .65s ease both;
+}
+
+@keyframes sanctuaryUnlock {
+  0% {
+    opacity: .65;
+    transform: scale(.985);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 1100px) {
+  .desktop-nav {
+    gap: 18px;
+  }
+
+  .desktop-nav a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    width: calc(100% - 24px);
+    top: 12px;
+    padding: 12px 14px;
+  }
+
+  .brand img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .theme-toggle,
+  .menu-toggle,
+  .language-button {
+    min-width: 48px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .mobile-nav {
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 120px 24px 70px;
+    background: rgba(4,18,30,.98);
+    backdrop-filter: blur(24px);
+  }
+
+  .mobile-nav a {
+    width: min(520px, 100%);
+    margin-inline: auto;
+    padding: 13px 18px;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    font-size: clamp(24px, 7vw, 40px);
+    line-height: 1.15;
+  }
+
+  .mobile-nav a:hover,
+  .mobile-nav a:focus-visible {
+    border-color: rgba(230,195,106,.22);
+    background: rgba(255,255,255,.055);
+  }
+
+  .sanctuary-page {
+    padding-top: 125px;
+  }
+
+  .sanctuary-copy {
+    text-align: left;
+  }
+
+  .sanctuary-copy h1 {
+    margin-left: 0;
+  }
+
+  .sanctuary-warning {
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .container {
+    width: min(100% - 28px, var(--container));
+  }
+
+  .hero h1,
+  .subhero h1,
+  .sanctuary-copy h1 {
+    text-wrap: balance;
+  }
+
+  .button-row,
+  .sanctuary-actions,
+  .contact-socials {
+    width: 100%;
+  }
+
+  .button-row .btn,
+  .sanctuary-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sanctuary-mascot {
+    min-height: 420px;
+  }
+
+  .sanctuary-mascot img {
+    width: min(390px, 100%);
+  }
+
+  .guardian-message {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: -20px;
+    max-width: 100%;
+    border-radius: 20px;
+    text-align: center;
+  }
+
+  .sanctuary-result {
+    border-radius: 28px;
+  }
+
+  .sanctuary-cards article {
+    min-height: 112px;
+  }
+
+  .footer {
+    gap: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+
+/* v6.0 definitive mobile menu fix */
+body.menu-open {
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .mobile-nav {
+    display: none !important;
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    padding: 120px 24px 70px;
+    overflow-y: auto;
+    max-height: 100dvh;
+    background: rgba(4,18,30,.98);
+    backdrop-filter: blur(24px);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-nav.open {
+    display: flex !important;
+  }
+
+  .navbar {
+    z-index: 60;
+  }
+
+  .menu-toggle {
+    position: relative;
+    z-index: 61;
+  }
+}
+
+
+/* v6.1 Sanctuary Coming Soon modal */
+body.sanctuary-modal-open {
+  overflow: hidden;
+}
+
+.sanctuary-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .28s ease, visibility .28s ease;
+}
+
+.sanctuary-modal.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.sanctuary-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(230,195,106,.16), transparent 34%),
+    rgba(2,10,18,.82);
+  backdrop-filter: blur(18px);
+}
+
+.sanctuary-modal-card {
+  position: relative;
+  z-index: 2;
+  width: min(720px, 100%);
+  overflow: hidden;
+  border: 1px solid rgba(230,195,106,.28);
+  border-radius: 38px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(230,195,106,.18), transparent 35%),
+    linear-gradient(145deg, rgba(12,35,58,.98), rgba(4,17,29,.98));
+  box-shadow:
+    0 40px 120px rgba(0,0,0,.48),
+    0 0 55px rgba(230,195,106,.10);
+  padding: 44px 34px 36px;
+  text-align: center;
+  transform: translateY(18px) scale(.97);
+  transition: transform .32s ease;
+}
+
+.sanctuary-modal.open .sanctuary-modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.sanctuary-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 4;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(255,255,255,.07);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.sanctuary-modal-glow {
+  position: absolute;
+  left: 50%;
+  top: 90px;
+  width: 280px;
+  height: 280px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(230,195,106,.22);
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.sanctuary-modal-logo {
+  position: relative;
+  z-index: 2;
+  width: 104px;
+  height: 104px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(230,195,106,.30), transparent 70%);
+}
+
+.sanctuary-modal-logo img {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  box-shadow: 0 0 44px rgba(230,195,106,.38);
+}
+
+.sanctuary-modal-card h2 {
+  position: relative;
+  z-index: 2;
+  margin: 10px auto 20px;
+  max-width: 560px;
+  font-size: clamp(34px, 5vw, 58px);
+}
+
+.sanctuary-modal-message {
+  position: relative;
+  z-index: 2;
+  max-width: 590px;
+  margin: 0 auto;
+}
+
+.sanctuary-modal-message p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.sanctuary-modal-message strong {
+  display: block;
+  margin-top: 20px;
+  color: var(--gold-soft);
+  font-size: 20px;
+}
+
+.sanctuary-modal-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.sanctuary-coming-soon-button:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+@media (max-width: 640px) {
+  .sanctuary-modal {
+    padding: 16px;
+  }
+
+  .sanctuary-modal-card {
+    padding: 38px 20px 28px;
+    border-radius: 28px;
+  }
+
+  .sanctuary-modal-actions {
+    flex-direction: column;
+  }
+
+  .sanctuary-modal-actions .btn {
+    width: 100%;
+  }
+}
+
+
+/* v7.0 Sprint 1 — Wallet Connection */
+.wallet-connect-panel{margin-top:18px}.wallet-connect-main{width:100%;min-height:88px;display:flex;align-items:center;gap:16px;border:1px solid rgba(230,195,106,.38);border-radius:24px;background:radial-gradient(circle at 16% 50%,rgba(230,195,106,.18),transparent 28%),var(--panel);color:var(--text);padding:16px 20px;text-align:left;cursor:pointer;transition:.2s}.wallet-connect-main:hover{transform:translateY(-2px);border-color:rgba(230,195,106,.72);box-shadow:0 20px 55px rgba(0,0,0,.22)}.wallet-connect-icon{width:52px;height:52px;display:grid;place-items:center;flex:0 0 52px;border-radius:18px;background:linear-gradient(135deg,var(--gold),#6cff9a);color:#062015;font-size:29px;font-weight:950}.wallet-connect-main strong,.wallet-connect-main small{display:block}.wallet-connect-main strong{font-size:20px}.wallet-connect-main small{margin-top:5px;color:var(--muted)}.wallet-connected-summary{min-height:88px;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;border:1px solid rgba(108,255,154,.34);border-radius:24px;background:rgba(108,255,154,.075);padding:16px 18px}.wallet-connected-summary[hidden]{display:none!important}.wallet-connected-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:16px;background:rgba(108,255,154,.18);color:#6cff9a;font-size:24px;font-weight:950}.wallet-connected-summary span,.wallet-connected-summary strong{display:block}.wallet-connected-summary span{color:var(--muted);font-size:13px}.wallet-connected-summary strong{margin-top:4px}.wallet-connected-summary button{border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.06);color:var(--text);padding:11px 14px;cursor:pointer}body.wallet-selector-open{overflow:hidden}.wallet-selector{position:fixed;inset:0;z-index:999;display:grid;place-items:center;padding:22px;opacity:0;visibility:hidden;pointer-events:none;transition:.24s}.wallet-selector.open{opacity:1;visibility:visible;pointer-events:auto}.wallet-selector-backdrop{position:absolute;inset:0;background:rgba(2,10,18,.86);backdrop-filter:blur(18px)}.wallet-selector-card{position:relative;z-index:2;width:min(520px,100%);border:1px solid rgba(230,195,106,.27);border-radius:32px;background:linear-gradient(145deg,rgba(12,35,58,.99),rgba(4,17,29,.99));box-shadow:0 38px 110px rgba(0,0,0,.48);padding:34px 26px 26px}.wallet-selector-card>p:not(.eyebrow){color:var(--muted)}.wallet-selector-close{position:absolute;top:16px;right:16px;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:rgba(255,255,255,.06);color:var(--text);cursor:pointer}.wallet-options{display:grid;gap:11px;margin-top:24px}.wallet-option{width:100%;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.055);color:var(--text);padding:14px 16px;text-align:left;cursor:pointer;transition:.18s}.wallet-option:hover{transform:translateY(-2px)}.wallet-option-logo{width:48px;height:48px;display:grid;place-items:center;border-radius:16px;font-size:20px;font-weight:950;color:white}.phantom-logo{background:linear-gradient(135deg,#8b5cf6,#4c1d95)}.solflare-logo{background:linear-gradient(135deg,#ff8a00,#ffcf33);color:#2b1600}.backpack-logo{background:linear-gradient(135deg,#e43b32,#751612)}.wallet-option strong,.wallet-option small{display:block}.wallet-option small{margin-top:4px;color:var(--muted)}.wallet-option.wallet-installed small{color:#6cff9a}.wallet-selector-help{margin-top:18px;padding:13px 14px;border-radius:16px;background:rgba(124,199,255,.08);color:var(--muted);font-size:13px;line-height:1.55}.sanctuary-status.success{border-color:rgba(108,255,154,.34);background:rgba(108,255,154,.07)}.sanctuary-status.warning{border-color:rgba(230,195,106,.34)}.sanctuary-status.error{border-color:rgba(255,110,110,.36);background:rgba(255,110,110,.07)}@media(max-width:640px){.wallet-connected-summary{grid-template-columns:auto 1fr}.wallet-connected-summary button{grid-column:1/-1;width:100%}.wallet-selector{padding:14px}.wallet-selector-card{padding:32px 18px 22px;border-radius:26px}}
